@@ -24,7 +24,7 @@ namespace ConsoleApp1
         public List<Word> Words { get => thesaurusWords; set => thesaurusWords = value; }
 
 
-        //AddSynonyms används inte i denna klassen, utan i Word-klassen. Leder inte till fel, men metoden i interfacet kan inte användas. 
+        //AddSynonyms används inte i denna klassen, utan i Word-klassen.
         public void AddSynonyms(IEnumerable<string> synonyms)
         {
             throw new NotImplementedException();

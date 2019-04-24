@@ -9,7 +9,9 @@ namespace ConsoleApp1
     public class Word
     {
         private string wordName;
-        List<string> synonyms = new List<string>(); //Ett ord kan ha flera synonymer som har typen String. Funderade på att göra utveckla synonymer till att vara objektet Word, eftersom synonymer också är ord så bör finnas i en ordbok. Valde att göra det enklare.
+        List<string> synonyms = new List<string>(); //Ett ord kan ha flera synonymer som har typen String. 
+        //Funderade på att göra synonymer till Word-objekt, eftersom synonymer också är ord som kan finnas i en ordbok.
+        //Men eftersom det var en IEnumerable<string> i parametern till AddSynonyms valde jag att göra synonymer till Strings.
 
         //Default konstruktor
         public Word()
