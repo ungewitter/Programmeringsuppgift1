@@ -9,9 +9,7 @@ namespace ConsoleApp1
     public class Word
     {
         private string wordName;
-        List<string> synonyms = new List<string>(); //Ett ord kan ha flera synonymer som har typen String. 
-        //Funderade på att göra synonymer till Word-objekt, eftersom synonymer också är ord som kan finnas i en ordbok.
-        //Men eftersom det var en IEnumerable<string> i parametern till AddSynonyms valde jag att göra synonymer till Strings.
+        List<String> synonyms = new List<string>();
 
         //Default konstruktor
         public Word()
@@ -22,17 +20,20 @@ namespace ConsoleApp1
         public Word(string wordName)
         {
             WordName = wordName;
+
         }
 
         public string WordName { get => wordName; set => wordName = value; }
-        public List<string> Synonyms { get => synonyms; set => synonyms = value; }
+        public List<String> Synonyms { get => synonyms; set => synonyms = value; }
 
-        //Metoden AddSynonyms ligger i Word-klassen. Detta leder till att metoden i interfacet aldrig används. Kan förbättras.
         public void AddSynonyms(IEnumerable<string> synonyms)
         {
             foreach (string s in synonyms)
             {
-                Synonyms.Add(s);
+                if (s != wordName)
+                {
+                    Synonyms.Add(s); //Lägger till synonymer i synonym-listan. Ser till att själva ordet inte är en del av dess synonymer.
+                }
             }
         }
     }
